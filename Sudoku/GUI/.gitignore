@@ -1,0 +1,34 @@
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+
+### Eclipse Patch ###
+#Eclipse Core
+.project
+
+# JDT-specific (Eclipse Java Developpement Tools)
+
+**/.classpath
+.classpath
+
+### Java ###
+
+#Compiled class file
+*.class
+
+# log file
+*.log
+
+**/target/
+target/
+
+/target/
+
