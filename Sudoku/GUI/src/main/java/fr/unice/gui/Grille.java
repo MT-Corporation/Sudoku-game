@@ -31,7 +31,15 @@ public class Grille {
 		 render = new Render();
 		 builder = render.newBuilder();
 		builder.width(70).height(30);
-		 table = new Table(9, 9);
+		 table = new Table(10, 9);
+	}
+	
+	// Methode pour numéroter les lignes de la grille
+	
+	public void numeroterGrillle() {
+		for(int i =1; i<10; i++) {
+			table.setElement(1, i,  new Label("N°" + String.valueOf(i)), true);
+		}
 	}
 	
 	/* Methode qui prend en paramètre une ArrayList grille et l'affiche */
@@ -40,17 +48,18 @@ public class Grille {
 	
 		for (int i = 1; i < tabGrille.size()+1; i++) {
 			//System.out.println("Haut :"+tabGrille.size());
-			for (int j = 1; j < tabGrille.get(i-1).length()+1; j++) {
+			for (int j = 2; j < tabGrille.get(i-1).length()+2; j++) {
 			//System.out.println("bas :"+tabGrille.get(i).length());
-				String value = String.valueOf(tabGrille.get(i-1).charAt(j-1));
+				String value = String.valueOf(tabGrille.get(i-1).charAt(j-2));
 				table.setElement(j, i, new Label(value));
+				
 			}
 		}
-		
-		//grille.getTable().setHighlighted(2, 3, true);
+		numeroterGrillle();
 		builder.element(table);
 		ICanvas canvas = render.render(builder.build());
 		String s = canvas.getText();
 		System.out.println(s);
+		
 	}
 }
