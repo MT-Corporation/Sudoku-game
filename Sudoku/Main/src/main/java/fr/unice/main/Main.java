@@ -25,11 +25,11 @@ public class Main {
 	/* chargement d'un fichier de grille et affiche la grille */
 	
 	public void init() {
-		mesCoups = saisie.readFromFile("src/main/ressources/firstGrid.txt");
+		mesCoups = saisie.readFromFile();
 		grille.afficheGrille(mesCoups);
 	}
 	
-	/* La boucle de jeu : tanque c'est pas la fin , ecrit et affiche la grille après chaque coup */
+	/* La boucle de jeu : tans que c'est pas la fin , ecrit et affiche la grille après chaque coup */
 	
 	public void jouer() {
 		do {
